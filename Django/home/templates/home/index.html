@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+{% block main%}
+        <h2>Etat des capteurs:</h2>
+        <div class='grid-main'>
+            {% for sensor in sensors %}
+            <div {% if sensor.value < sensor.minimum_value %} 
+                class='grid-child danger'>
+            {% elif sensor.value < sensor.alert_value %} 
+                class='grid-child alert'>
+            {% else %}
+                class='grid-child good'>
+            {% endif %}
+                <h2>{{ sensor.sensor_name }}</h2>
+                <h2>{{ sensor.value }}l/min</h2>
+                <h3>Alerte: {{ sensor.alert_value }}l/min</h3>
+                <h3>Mini: {{ sensor.minimum_value }}l/min</h3>
+            </div>
+            {% endfor %}
+            
+{% endblock %}

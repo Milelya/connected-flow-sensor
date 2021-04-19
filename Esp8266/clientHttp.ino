@@ -48,8 +48,8 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
   0xff, 0xf0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 };
 
-const char* ssid = "Livebox-2DE0";
-const char* password = "4KCzPkbzA7QNFErXJn";
+const char* ssid = "";
+const char* password = "";
   
 volatile int flow_frequency; // Measures flow sensor pulses
 unsigned int literByMin; // Calculated litres/min
